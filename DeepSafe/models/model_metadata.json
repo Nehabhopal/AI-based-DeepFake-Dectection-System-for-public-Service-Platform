@@ -1,0 +1,66 @@
+{
+  "model_name": "ResNet18",
+  "framework": "PyTorch",
+  "version": "1.0.0",
+  "classes": {
+    "0": "REAL",
+    "1": "DEEPFAKE"
+  },
+  "input_size": 224,
+  "status": "TRAINED",
+  "training_date": "2026-10-25T16:57:43",
+  "device": "cpu",
+  "seed": 42,
+  "epochs_requested": 4,
+  "batch_size": 4,
+  "learning_rate": 0.0001,
+  "quick_test_mode": false,
+  "dataset_counts": {
+    "train": {
+      "REAL": 3500,
+      "DEEPFAKE": 3500
+    },
+    "val": {
+      "REAL": 1200,
+      "DEEPFAKE": 1200
+    },
+    "test": {
+      "REAL": 300,
+      "DEEPFAKE": 300
+    }
+  },
+  "evaluation_metrics": {
+    "test_samples": 600,
+    "class_counts": {
+      "REAL": 300,
+      "DEEPFAKE": 300
+    },
+    "accuracy": 0.76,
+    "classes": {
+      "REAL": {
+        "precision": 0.7484076433121019,
+        "recall": 0.7833333333333333,
+        "f1": 0.7654723127035831
+      },
+      "DEEPFAKE": {
+        "precision": 0.7727272727272727,
+        "recall": 0.7366666666666667,
+        "f1": 0.7542662116040956
+      }
+    },
+    "macro_precision": 0.7605674580196873,
+    "macro_recall": 0.76,
+    "macro_f1": 0.7598692621538393,
+    "confusion_matrix": [
+      [
+        235,
+        65
+      ],
+      [
+        79,
+        221
+      ]
+    ],
+    "roc_auc": 0.8261555555555556
+  }
+}

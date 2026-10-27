@@ -1,0 +1,1 @@
+Place generated checkpoint `deepfake_resnet18_best.pth` here by running `python ml/train.py`. The checkpoint is intentionally not included because no real dataset was supplied. Never replace it with a random or placeholder checkpoint.

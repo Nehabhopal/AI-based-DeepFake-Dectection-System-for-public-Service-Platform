@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeepSafe | AI DeepFake Detection</title><link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <a class="brand" href="/"><span class="brand-mark">⬡</span><span><b>DeepSafe</b><small>AI for a Safer World</small></span></a>
+  <nav aria-label="Main navigation">
+    <button class="nav active" data-view="dashboard">▦ <span>Dashboard</span></button>
+    <button class="nav" data-view="check">⌕ <span>Check an Image</span></button>
+    <button class="nav" data-view="history">◷ <span>My Results</span></button>
+    <button class="nav" data-view="awareness">◎ <span>Public Awareness</span></button>
+    <button class="nav" data-view="feedback">✉ <span>Report / Feedback</span></button>
+    <button class="nav hidden" id="adminNav" data-view="admin">⚙ <span>Admin</span></button>
+  </nav>
+  <div class="sidebar-bottom"><span class="status-dot"></span> Responsible AI<br><small>Verify before you share</small></div>
+</aside>
+<main class="main">
+<header class="topbar"><div><p class="eyebrow">PUBLIC SERVICE PLATFORM</p><h1 id="pageTitle">Dashboard</h1></div><div class="top-actions"><span id="connection" class="pill">Checking service…</span><button id="authButton" class="button secondary">Log in</button></div></header>
+<section id="dashboard" class="view">
+  <div class="hero"><div><p class="eyebrow light">AI-BASED DEEPFAKE DETECTION SYSTEM</p><h2>Because not everything<br>you see is real.</h2><p>Make more informed decisions about digital images with transparent, responsible AI assistance.</p><button class="button white" data-go="check">Check an image <span>→</span></button></div><div class="hero-art" aria-hidden="true"><div class="scan-ring">◉</div><div class="hero-chip">IMAGE INTEGRITY<br><b>ANALYSIS</b></div></div></div>
+  <div class="section-heading"><div><h2>Your workspace</h2><p>Sign in to analyze images and access your saved results.</p></div></div>
+  <div class="grid three">
+    <article class="card action-card"><div class="icon blue">⌕</div><h3>Check an Image</h3><p>Upload an image for model-based analysis.</p><button class="text-button" data-go="check">Start analysis →</button></article>
+    <article class="card action-card"><div class="icon purple">◷</div><h3>My Results</h3><p>Review analyses saved to your account.</p><button class="text-button" data-go="history">View history →</button></article>
+    <article class="card action-card"><div class="icon teal">◎</div><h3>Public Awareness</h3><p>Learn about manipulated media and verification.</p><button class="text-button" data-go="awareness">Learn more →</button></article>
+  </div>
+  <div class="notice"><b>Important:</b> AI-based detection is probabilistic and should not be treated as absolute proof. Always verify the original source.</div>
+</section>
+<section id="auth" class="view hidden"><div class="auth-card card"><div class="auth-side"><div class="brand-mark big">⬡</div><h2>Trust what you verify.</h2><p>AI-assisted image integrity, with transparent limitations.</p></div><div class="auth-form"><h2 id="authTitle">Welcome back</h2><p id="authSubtitle">Log in to your DeepSafe account.</p><form id="authForm"><label id="nameLabel" class="hidden">Full name<input id="name" autocomplete="name"></label><label>Email address<input id="email" type="email" required autocomplete="email"></label><label>Password<input id="password" type="password" minlength="8" required autocomplete="current-password"></label><button class="button primary full" id="authSubmit">Log in</button></form><p id="authError" class="error" role="alert"></p><button id="toggleAuth" class="text-button">Create an account</button></div></div></section>
+<section id="check" class="view hidden"><div class="card upload-card"><div class="section-heading"><div><h2>Check an image</h2><p>Upload a clear JPG, PNG, or WEBP image. Maximum 10 MB by default.</p></div><span class="pill">Private workspace</span></div><form id="uploadForm"><label for="imageFile" class="dropzone"><span class="upload-icon">↑</span><b id="fileLabel">Choose an image to analyze</b><span>Browse files · JPG, JPEG, PNG, WEBP</span><input id="imageFile" name="image" type="file" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" required></label><div id="previewWrap" class="preview-wrap hidden"><img id="preview" alt="Selected image preview"><button type="button" id="clearImage" class="text-button">Remove image</button></div><button class="button primary" type="submit">Analyze image</button><p id="uploadMessage" role="status"></p></form><div class="steps"><span>1. Validate image</span><span>2. Model inference</span><span>3. Explain result</span></div></div><div id="analysisResult" class="card hidden"></div></section>
+<section id="history" class="view hidden"><div class="card"><div class="section-heading"><div><h2>My results</h2><p>Only your account's saved analyses are shown.</p></div><button class="button primary" data-go="check">New analysis</button></div><div id="historyContent">Log in to view saved results.</div></div></section>
+<section id="awareness" class="view hidden"><div class="card"><p class="eyebrow">STAY INFORMED</p><h2>Understand manipulated media</h2><div class="grid two"><article class="info-card"><h3>What is a deepfake?</h3><p>AI-generated or AI-manipulated media that can make a person appear to say or do something they did not.</p></article><article class="info-card"><h3>How are they created?</h3><p>Generative models can synthesize or alter facial appearance, expressions, or identity in images and video.</p></article><article class="info-card"><h3>Warning signs</h3><p>Look for inconsistent lighting, unusual facial boundaries, odd reflections, image artifacts, and context that cannot be verified. No single clue is conclusive.</p></article><article class="info-card"><h3>Verify first</h3><p>Find the original source, compare trusted reporting, seek independent confirmation, and avoid forwarding unverified content.</p></article></div><div class="notice">Automated detection can make mistakes on both real and manipulated images. It is one signal, not a verdict.</div></div></section>
+<section id="feedback" class="view hidden"><div class="card form-card"><h2>Report / Feedback</h2><p>Help us understand problems with the application or its results.</p><form id="feedbackForm"><label>Category<select id="feedbackCategory"><option>Feedback</option><option>Report a Problem</option><option>Wrong Prediction</option><option>Technical Issue</option><option>Other</option></select></label><label>Message<textarea id="feedbackMessage" rows="5" maxlength="5000" required></textarea></label><button class="button primary">Submit feedback</button></form><p id="feedbackMessageStatus" role="status"></p></div></section>
+<section id="admin" class="view hidden"><div class="card"><h2>Admin dashboard</h2><p>Counts are queried from the connected database. No sample metrics are shown.</p><div id="adminContent">Administrator access required.</div></div></section>
+<footer>DeepSafe · Responsible AI for public awareness <span>AI detection is not absolute proof.</span></footer>
+</main></div>
+<div id="toast" role="status" aria-live="polite"></div><script src="/js/main.js" defer></script>
+</body></html>

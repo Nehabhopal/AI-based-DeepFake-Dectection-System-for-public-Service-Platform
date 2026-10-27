@@ -1,0 +1,3 @@
+-- No seeded users, analyses, feedback, or fake dashboard metrics are provided.
+-- Register a user through the app, then promote that account to admin with:
+-- UPDATE users SET role='admin' WHERE email='your-admin-email@example.com';
